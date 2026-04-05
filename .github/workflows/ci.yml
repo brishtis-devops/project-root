@@ -28,9 +28,10 @@ jobs:
           flake8 app
 
       - name: Run test (pytest)
-        run: |
-          pytest
-
+        run: pytest
+        env:
+          PYTHONPATH: .
+          
       - name: Run Application
         run: |
           python app/main.py
